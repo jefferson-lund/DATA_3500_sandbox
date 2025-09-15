@@ -1,0 +1,3 @@
+#Aggie Basketball
+
+student = input
