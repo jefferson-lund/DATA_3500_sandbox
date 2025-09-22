@@ -82,13 +82,13 @@
 # Write in pseudocode and then in Python a program that simulates a guessing game. The program should randomly choose a number between 1 and 100. The user must guess the number, and the program will tell the user if their guess is too high, too low, or correct. The game should continue until the user guesses the correct number or chooses to quit. The program should also keep track of how many guesses the user made.
 
 # """
-# #assign a random number
-# #make a guess variable
-# #loop until guess equals the random number
-# #take input assign to guess
-# #if guess is lower than the number say its too low
-# #if guess is higher than the number say its too high
-# #if guess equals the number say they got it
+# # assign a random number
+# # make a guess variable
+# # loop until guess equals the random number
+# # take input assign to guess
+# # if guess is lower than the number say its too low
+# # if guess is higher than the number say its too high
+# # if guess equals the number say they got it
 # secret_number = random.randint(1, 100)
 # guess = 101
 # while guess != secret_number:
@@ -103,12 +103,12 @@
 
 
 
-"""
-1. Find all the prime numbers within a given range using a for loop
+# """
+# 1. Find all the prime numbers within a given range using a for loop
 
-2. Write a Python program to reverse a given three or more digit integer WITHOUT using lists (hint, use // and % to isolate numbers)
-"""
-#############################################################################################################################################
+# 2. Write a Python program to reverse a given three or more digit integer WITHOUT using lists (hint, use // and % to isolate numbers)
+# """
+# #############################################################################################################################################
 # #make a prime or not variable
 # prime = False
 # #take min and max for range to check
@@ -137,51 +137,45 @@
 #         print(f"{x} is a prime number")
 #     else:
 #         print(f"{x} is not a prime number")
-#############################################################################################################################################
+# #############################################################################################################################################
 
-#reverse a number
-"""
-check that it's 3 or more digits
-store number of digits
-make a new string(?) list(?) from the last number moving back by taking the floor division(//) of length(the number) 
-"""
+# #reverse a number
+# """
+# check that it's 3 or more digits
+# store number of digits
+# make a new string(?) list(?) from the last number moving back by taking the floor division(//) of length(the number) 
+# """
 
 import sys
 # #create an empty list and empty string
 # reverse = ""
 list = []
 # #take input and check that it's an at least 3 digit number
-num_input = int(input("Enter a number that is at least three digits: "))
-if len(str(num_input)) < 3:
+number = int(input("Enter a number that is at least three digits: "))
+
+if len(str(number)) < 3:
     print("That number is less than 3 digits, try again.")
     sys.exit()
-str_length = len(str(num_input))
+str_length = len(str(number))
 
 ###FIRST DIGIT FUNCTION
 def first_digit(number):
     return number//(10**((len(str(number)))-1))
-# print (f"first digit: {first_digit(num_input)}")
+# print (f"first digit: {first_digit(number)}")
 
 ###LAST DIGIT FUNCTION
 def last_digit(number):
-    return int((str(number)[str_length-1]))
-# print(f"last digit: {last_digit(num_input)}")
+    strang = str(number)
+    return strang[len(str(number))-1]
+# print(f"last digit: {last_digit(number)}")
 
-# str_length = len(str(num_input))
+list.append(last_digit(number))
 
-
-
-# print(f"first digit: {first_digit}")
-# print(f"last digit: {last_digit}")
-
-
-
-# for i in range(str_length):
-#     str_length = len(str(num_input))
-#     last_digit = int((str(num_input)[str_length-1]))
-#     list.append(str(last_digit))
-#     num_input=num_input//(num_input-last_digit)
+for i in range(len(str(number))):
+    number = number//10
+    list.append(last_digit(number))
+list.pop()
 # print(list)
-# for i in list:
-#     reverse+=i
-# print(reverse)
+reverse = "" 
+reverse = reverse.join(list)
+print(f"reversed number: {reverse}")
