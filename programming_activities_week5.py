@@ -86,11 +86,10 @@ Write a function named "welcome_fctn" which takes one argument, called "name".  
 - Call the function, welcome_fctn(<your_name>)
 """
 
-def welcome_fctn(name):
-    parameters = [name]
-    print(f"Welcome, {name}")
+# def welcome_fctn(name):
+#     print(f"Welcome, {name}")
 
-welcome_fctn("Jefferson")
+# welcome_fctn("Jefferson")
 
 
 """
@@ -105,6 +104,15 @@ assigned the value "Welcome " name. The same value printed in activity 1, but he
          1. Print(welcome_fctn("Bob"))
          2. Create a variable to store what is returned by the function then print that
 """
+
+# def welcome_fctn(name):
+#     message = f"Welcome, {name}"
+#     return message
+
+# print(welcome_fctn("Jefferson"))
+
+
+
 """
 Programming Activity 6
 
@@ -114,3 +122,8 @@ Update the function in activity one to have 3 variables: name (string),  age (in
 - Return welcome_message just like you did in activity 2
 - To test this, call welcome_fctn with 3 arguments
 """
+
+def welcome_fctn(name, age, favorite_color):
+    return f"Welcome {name}, you are {age} years old, and {favorite_color} is your favorite color"
+
+print(welcome_fctn("Jefferson", 25, "silver"))
