@@ -9,17 +9,17 @@ Write a program which can tell if a 3 digit number is a palindrome.
  - If they are the same print("palindrome!!!!"). 
  - Else print("not palindrome!")
 """
-# import sys
-# number = int(input("Enter a 3 digit number: "))
-# if len(str(number)) != 3:
-#     print("That is not 3 digits")
-#     sys.exit()
-# dig1 = number//100
-# dig3 = number%10
-# if dig1 == dig3:
-#     print("This is a palindrome.")
-# else:
-#     print("Not a palindrome.")
+import sys
+number = int(input("Enter a 3 digit number: "))
+if len(str(number)) != 3:
+    print("That is not 3 digits")
+    sys.exit()
+dig1 = number//100
+dig3 = number%10
+if dig1 == dig3:
+    print("This is a palindrome.")
+else:
+    print("Not a palindrome.")
 
 """
 Programming Activity 2
@@ -31,13 +31,13 @@ for loop for 1000 iterations
 start for loop at 1, go to 1000
 variable to track the sum
 What number is the result?
-"""
-# sum = 0
-# denominator = 0
-# for i in range(1,1000-1):
-#     denominator = i
-#     sum += (1/denominator)
-# print(sum)
+ """
+sum = 0
+denominator = 0
+for i in range(1,1000-1):
+    denominator = i
+    sum += (1/denominator)
+print(sum)
 
 """
 Programming Activity 3
@@ -50,30 +50,30 @@ Write a program which determines whether a child can sit in the front seat  of a
 Your program will ask the user for a child's age and weight. Use Boolean variables to store the results of the criteria above. Use if statements and the Boolean variables created above to print a message to the user whether or not the child may sit in the front seat.
 """
 
-# age = 0
-# weight = 0
-# can_sit = False
+age = 0
+weight = 0
+can_sit = False
 
-# age = int(input("Enter child's age: "))
-# weight = int(input("Enter child's weight: "))
+age = int(input("Enter child's age: "))
+weight = int(input("Enter child's weight: "))
 
-# over_12 = age >= 12
-# is11 = age == 11
-# over_90lbs = weight > 90
-# over_100lbs = weight > 100
+over_12 = age >= 12
+is11 = age == 11
+over_90lbs = weight > 90
+over_100lbs = weight > 100
 
 
-# if over_12:
-#     can_sit = True
-# elif is11 and over_90lbs:
-#     can_sit = True
-# elif not over_12 and over_100lbs:
-#     can_sit = True
+if over_12:
+    can_sit = True
+elif is11 and over_90lbs:
+    can_sit = True
+elif not over_12 and over_100lbs:
+    can_sit = True
 
-# if can_sit:
-#     print("Your kid can sit in the front seat!")
-# else:
-#     print("Your kid can't sit in the front seat.")
+if can_sit:
+    print("Your kid can sit in the front seat!")
+else:
+    print("Your kid can't sit in the front seat.")
 
 """
 Programming Activity 4
@@ -86,10 +86,10 @@ Write a function named "welcome_fctn" which takes one argument, called "name".  
 - Call the function, welcome_fctn(<your_name>)
 """
 
-# def welcome_fctn(name):
-#     print(f"Welcome, {name}")
+def welcome_fctn(name):
+    print(f"Welcome, {name}")
 
-# welcome_fctn("Jefferson")
+welcome_fctn("Jefferson")
 
 
 """
@@ -105,11 +105,11 @@ assigned the value "Welcome " name. The same value printed in activity 1, but he
          2. Create a variable to store what is returned by the function then print that
 """
 
-# def welcome_fctn(name):
-#     message = f"Welcome, {name}"
-#     return message
+def welcome_fctn(name):
+    message = f"Welcome, {name}"
+    return message
 
-# print(welcome_fctn("Jefferson"))
+print(welcome_fctn("Jefferson"))
 
 
 
