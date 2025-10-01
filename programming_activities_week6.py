@@ -74,15 +74,53 @@ Programming Activity 5
 3. After you have calculated the average for the entire data set, see if you can calculate the average for the first 5 days only.  
 (you will need this logic for your homework).
 """
-list = []
+"""    better way to do it
+count = 0
+first_5 = []
 
-#used chat to figure out reading a txt file
-with open("/workspaces/DATA_3500_sandbox/AAPL.2023.txt", "r") as file:
-    data = file.read()
+file = open("/workspaces/DATA_3500_sandbox/AAPL.2023.txt", "r")
+# print(f"file: {file}")
+lines = file.readlines()
 
-for line in file:
-    list.append(int(line))
-    print(f"Appended {line}")
+prices = []
+for line in lines:
+    line = float(line)
+    prices.append(line)
+
+def avg_calculator(prices):
+    return sum(prices)/len(prices)
+
+def avg_calculator_5(prices):
+    prices = prices[:5]
+    return sum(prices)/len(prices)
+
+print(f"5 days avg: {avg_calculator_5(prices)}")
+print(f"total average: {avg_calculator(prices)}")
+"""
+
+#############################################################################################
+# numbers = []
+# total = 0
+# count = 0
+# #used chat to figure out reading a txt file
+# with open("/workspaces/DATA_3500_sandbox/AAPL.2023.txt", "r") as file:
+#     for line in file:
+#             line = line.strip()
+#             if line:  # avoid empty lines
+#                 numbers.append(float(line))
+# for number in numbers:
+#      total+=number
+#      count+=1
+# print(f"average: ", total/count)
+# total = count = 0
+# for number in numbers:
+#     total+=number
+#     count+=1
+#     if count == 5:
+#          break
+# print(f"average of first 5: ", total/count)
+
+#############################################################################################
 
 """
 Programming Activity 5.2 
@@ -96,3 +134,24 @@ Add logic in the for loop to implement a simple moving average
 trading strategy.
 Display the profit from the strategy, after the for loop has finished.
 """
+
+file = open("/workspaces/DATA_3500_sandbox/AAPL.2023.txt", "r")
+lines = file.readlines()
+prices = []
+
+for line in lines:
+    line = float(line)
+    prices.append(line)
+
+print(lines)
+
+def avg_calculator(list):
+    return sum(list)/len(list)
+
+#print average of first 4
+print(f"avg of first 4: {avg_calculator(prices[:4])}")
+
+#print average of last 4
+print(f"avg of last 4: {avg_calculator(prices[-4:])}")
+
+#4 day moving average
