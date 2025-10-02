@@ -171,16 +171,39 @@ end = 4
 profit = 0
 money = 1000
 position = 0
+trade_executed = 0
+starting_price = prices[0]
+day = 0
 
-for price in prices:
+for price in prices[4:]:
+    day+=1
+    print(f"Day {day}- \nbudget: {money}\nposition: {position}")
     if price > avg_calculator(prices[beg:end]):
-        profit += price
-        print(f"bought at {price} because it's greater than the 4 day avg:  {avg_calculator(prices[beg:end])}")
+        if money > price:
+            money -= price
+            position += 1
+            print(f"bought at {price} because it's greater than the 4 day avg:  {avg_calculator(prices[beg:end])}")
+            trade_executed += 1
+        else:
+            print(f"not enough money to buy at {price}")
     else:
-        profit -= price
-        print(f"sold at {price} because it's less than the 4 day avg:  {avg_calculator(prices[beg:end])}")
+        if position > 0:
+            money += price
+            position -= 1
+            print(f"sold at {price} because it's less than the 4 day avg:  {avg_calculator(prices[beg:end])}")
+            trade_executed += 1
+        else:
+            print(f"no position to sell at {price}")
     beg += 1
     end += 1
-print(f"profit: {profit}")
-
-#git
+print("")
+price = prices[-1]
+print(f"money left over:\t ${money:.2f}")
+print(f"starting price:\t\t ${starting_price:.2f}")
+print(f"closing price:\t\t ${price:.2f}")
+print(f"change in price:\t {100*(price-starting_price)/starting_price:.2f}%")
+profit = (price*position) + money - 1000
+print(f"profit:\t\t\t ${profit:.2f} ({100*(profit/1000):.2f}%)")
+trade_percent = (100*(trade_executed/len(prices[4:])))
+print(f"days a trade executed:\t {trade_percent:.2f}%")
+print("")
