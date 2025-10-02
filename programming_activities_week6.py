@@ -169,6 +169,8 @@ each loop, i'll use the avg_calculator function to calculate the average of the 
 beg = 0
 end = 4
 profit = 0
+money = 1000
+position = 0
 
 for price in prices:
     if price > avg_calculator(prices[beg:end]):
@@ -180,3 +182,5 @@ for price in prices:
     beg += 1
     end += 1
 print(f"profit: {profit}")
+
+#git
