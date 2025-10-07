@@ -26,6 +26,7 @@ array from 0s to random numbers.
 # import numpy
 # import random
 
+<<<<<<< HEAD
 # array = numpy.zeros(100)
 # print(array)
 # #learned about enumerate and differences between for loops on lists vs arrays in memory
@@ -58,5 +59,7 @@ with open("C:/Users/Jefferson/DATA_3500_Repos/Sandbox/person-1.json", "w") as fi
 with open("C:/Users/Jefferson/DATA_3500_Repos/Sandbox/person-1.json", "r") as file:
     person = json.load(file)
     print(f"Contents of json file: {person}")
+=======
+>>>>>>> 0b3a5fde3bc109cb9d93372e3926e596f389fd2e
 
 
