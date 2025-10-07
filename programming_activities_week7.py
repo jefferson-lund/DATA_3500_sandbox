@@ -26,9 +26,5 @@ array from 0s to random numbers.
 import numpy
 import random
 
-array = numpy.array[100]
-for i in array:
-    array.append(0)
 
-print(array)
 
