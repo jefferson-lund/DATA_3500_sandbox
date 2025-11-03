@@ -154,14 +154,15 @@ print(f"avg of first 4: {avg_calculator(prices[:4])}")
 #print average of last 4
 print(f"avg of last 4: {avg_calculator(prices[-4:])}")
 
-#start with 10,000 dollars
-#4 day moving average
-#loop through the list
-#at each loop, calculate the average of the last four days (start at day 4)
-#if the next day is greater than the average, we buy
-#if the next day is lower than the average, we sell
-#calculate profit/loss for that day and store in a variable
-
+"""
+start with 10,000 dollars
+4 day moving average
+loop through the list
+at each loop, calculate the average of the last four days (start at day 4)
+if the next day is greater than the average, we buy
+if the next day is lower than the average, we sell
+calculate profit/loss for that day and store in a variable
+"""
 """
 i have a list of prices, i can loop through the list
 each loop, i'll use the avg_calculator function to calculate the average of the last four days
